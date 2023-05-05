@@ -52,8 +52,6 @@
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Tiempo</th>
                     </tr>
                     </thead>
                     <!-- agregar id a tbody -->
@@ -89,7 +87,7 @@
 
     function cargarDatos(){
         // alert('Cargue datos');
-        fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")//url de peticion de dATOS
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de dATOS
         .then(respuesta => respuesta.json())//respuesta recibe los datps en formato json 
         .then((datosrespuesta) => {
             setTable(datosrespuesta.data)//lo envio para la funcion para darle tratamiento a los datos
@@ -109,8 +107,6 @@
                          <tr class="table-primary" >
                              <td scope="row">${valor.id}</td>
                             <td>${valor.nombre}</td>
-                            <td>${valor.descripcion}</td>
-                            <td>${valor.tiempo}</td>
                         </tr>`;
         }
     }
