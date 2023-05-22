@@ -36,37 +36,128 @@
             <li class="nav-item">
                 <a href="listaUsuarios.html" class="nav-link" aria-current="page">Usuarios</a>
             </li>
-            
+
         </ul>
     </header>
     <main>
+        <header>
 
-        <div class="table-responsive">
-            <table class="table table-striped
-            table-hover	
-            table-borderless
-            table-primary
-            align-middle">
-                <thead class="table-light">
-                    <caption>Table Name</caption>
-                    <tr>
-                        <th>Id</th>
-                        <th>Cedula</th>
-                        <th>Correo</th>
-                        <th>Nombre</th>
-                    </tr>
+        </header>
+        <main>
+            <div class="table-responsive">
+                <table class="table table-striped
+                table-hover	
+                table-borderless
+                table-primary
+                align-middle">
+                    <thead class="table-light">
+                        <caption>Table Name</caption>
+                        <tr>
+                            <th>Id</th>
+                            <th>Cedula</th>
+                            <th>Correo</th>
+                            <th>telefono</th>
+                            <th>direccion</th>
+                            <th>nombre</th>
+                            <th>apellidopaterno</th>
+                            <th>apellidomaterno</th>
+                            <th>idCarreras</th>
+
+
+                        </tr>
                     </thead>
                     <!-- agregar id a tbody -->
                     <tbody class="table-group-divider" id="resultados">
                         <!-- la funcion llena la tabla  -->
                     </tbody>
                     <tfoot>
-                        
+
                     </tfoot>
-            </table>
+                </table>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formulario">
+                            <input type="hidden" id="id" name="id">
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">Cedula</label>
+                                <input type="text" class="form-control" name="cedula" id="cedula"
+                                    aria-describedby="helpId" placeholder="Nombre del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el nombre del curso</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">correoelectronico</label>
+                                <input type="text" class="form-control" name="correoelectronico" id="correoelectronico"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">telefono</label>
+                                <input type="text" class="form-control" name="telefono" id="telefono"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">direccion</label>
+                                <input type="text" class="form-control" name="direccion" id="direccion"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">nombre</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">apellidopaterno</label>
+                                <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">apellidomaterno</label>
+                                <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">idCarreras</label>
+                                <input type="text" class="form-control" name="idCarreras" id="idCarreras"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+                            <div class="mb-3">
+                                <button type="reset" class="btn btn-danger">Limpiar</button>
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        
+
+
+
+
 
     </main>
     <footer>
@@ -85,7 +176,6 @@
         //Declaracion de variable u objetos
 
         var contenidoTablaResultado = document.querySelector('#resultados');
-
         function cargarDatos() {
             // alert('Cargue datos');
             fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")//url de peticion de dATOS
@@ -97,8 +187,6 @@
                 .catch(console.log)//muestra error         
         }
 
-        // fetch=solicitar, son peticiones
-        // estamos creando objetos en memoria  
         function setTable(datos) {
             console.log('datos', datos)
             // contenidoTablaResultado.innerHTML = 'test';
@@ -109,12 +197,127 @@
                              <td scope="row">${valor.id}</td>
                             <td>${valor.cedula}</td>
                             <td>${valor.correoelectronico}</td>
+                            <td>${valor.telefono}</td>
+                            <td>${valor.direccion}</td>
                             <td>${valor.nombre}</td>
+                            <td>${valor.apellidopaterno}</td>
+                            <td>${valor.apellidomaterno}</td>
+                            <td>${valor.idCarreras}</td>
+
+
+                            <td><button type="button" class="btn btn-danger" onclick="eliminar('${valor.id}')">Borrar</button>
+                             
+                             ||
+                             <button id="Edit" type="button" class="btn btn-primary" 
+                             onclick="actualizar('${valor.id}','${valor.cedula}',
+                             '${valor.correoelectronico}','${valor.telefono}','${valor.direccion}'
+                             ,'${valor.nombre}','${valor.apellidopaterno}','${valor.apellidomaterno}'
+                             ,'${valor.idCarreras}')">Actualizar</button>
+                           </td>   
                         </tr>`;
             }
         }
+        const myModal = new bootstrap.Modal(document.getElementById('modalId'));
+
+        function actualizar(id, cedula, correoelectronico, telefono, direccion,
+            nombre, apellidopaterno, apellidomaterno, idCarreras) {
+            console.log(actualizar);
+            myModal.show();
+            document.getElementById("id").value = id;
+            document.getElementById("cedula").value = cedula;
+            document.getElementById("correoelectronico").value = correoelectronico;
+            document.getElementById("telefono").value = telefono;
+            document.getElementById("direccion").value = direccion;
+            document.getElementById("nombre").value = nombre;
+            document.getElementById("apellidopaterno").value = apellidopaterno;
+            document.getElementById("apellidomaterno").value = apellidomaterno;
+            document.getElementById("idCarreras").value = idCarreras;
+
+        }
+
+        var formulario = document.getElementById('formulario');
+
+
+        //Funcion para actualizar los datos
+        formulario.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Recuperando datos');
+            console.log(datosenviar);
+            let id = document.getElementById('id').value;
+            let cedula = document.getElementById('cedula').value;
+            let correoelectronico = document.getElementById('correoelectronico').value;
+            let telefono = document.getElementById('telefono').value;
+            let direccion = document.getElementById('direccion').value;
+            let nombre = document.getElementById('nombre').value;
+            let apellidopaterno = document.getElementById('apellidopaterno').value;
+            let apellidomaterno = document.getElementById('apellidomaterno').value;
+            let idCarreras = document.getElementById('idCarreras').value;
+
+            //Se guardan los datos recuperados en una variable
+            var datosenviar = {
+                id: id,
+                cedula: cedula,
+                correoelectronico: correoelectronico,
+                telefono: telefono,
+                telefonocelular: "00000",
+                fechanacimiento: "12-02-2002",
+                sexo: 'Masculino',
+                direccion: direccion,
+                nombre: nombre,
+                apellidopaterno: apellidopaterno,
+                apellidomaterno: apellidomaterno,
+                nacionalidad: "Costa Rica",
+                idCarreras: idCarreras,
+                usuario: "profesor Mario"
+            };
+
+            console.log(datosenviar);
+
+            fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarEstudiantes.php",
+                {
+                    method: 'POST',
+                    body: JSON.stringify(datosenviar)
+                }).then(function (response) {
+                    //Manejo la respuesta de la API
+                    if (response.ok) {
+                        alert("Datos modificados correctamente.");
+                        myModal.hide();
+
+                        contenidoTablaResultado.innerHTML = ""; // Limpia el contenido de la tabla
+                        cargarDatos();
+                    } else {
+                        alert("Error al enviar los datos.");
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("Error al enviar los datos Catch");
+                });
+        });
+        function eliminar(id) {
+            alert('Esta a punto de eliminar ' + id)
+            var datosenviar = {
+                id: id
+            }
+
+            fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarEstudiantes.php", {
+                method: "POST",
+                body: JSON.stringify(datosenviar)
+
+            })
+                .then(respuesta => respuesta.json())//recibe los datos en formato json
+                .then((datosrepuesta) => {
+                    alert("Datos eliminados correctamente.");
+
+
+                    contenidoTablaResultado.innerHTML = ""; // Limpia el contenido de la tabla
+                    cargarDatos();
+                })
+                .catch(console.log)//muestra errores
+        }
 
         cargarDatos();
+
     </script>
 
 
