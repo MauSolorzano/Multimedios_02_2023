@@ -57,11 +57,18 @@
                             <th>Cedula</th>
                             <th>Correo</th>
                             <th>telefono</th>
+                            <th>telefonocelular</th>
+                            <th>fechanacimiento</th>
+                            <th>sexo</th>
                             <th>direccion</th>
                             <th>nombre</th>
                             <th>apellidopaterno</th>
                             <th>apellidomaterno</th>
+                            <th>nacionalidad</th>
                             <th>idCarreras</th>
+                            <th>usuario</th>
+                            <th>Acciones</th>
+
 
 
                         </tr>
@@ -90,7 +97,7 @@
                     <div class="modal-body">
                         <form id="formulario">
                             <input type="hidden" id="id" name="id">
-
+                            
                             <div class="mb-3">
                                 <label for="" class="form-label">Cedula</label>
                                 <input type="text" class="form-control" name="cedula" id="cedula"
@@ -99,47 +106,89 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="" class="form-label">correoelectronico</label>
+                                <label for="" class="form-label">Correoelectronico</label>
                                 <input type="text" class="form-control" name="correoelectronico" id="correoelectronico"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">telefono</label>
                                 <input type="text" class="form-control" name="telefono" id="telefono"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+                            
+                            <div class="mb-3">
+                                <label for="" class="form-label">telefonocelular</label>
+                                <input type="text" class="form-control" name="telefonocelular" id="telefonocelular"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">fechanacimiento</label>
+                                <input type="text" class="form-control" name="fechanacimiento" id="fechanacimiento"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">sexo</label>
+                                <input type="text" class="form-control" name="sexo" id="sexo"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">direccion</label>
                                 <input type="text" class="form-control" name="direccion" id="direccion"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">nombre</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">apellidopaterno</label>
                                 <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">apellidomaterno</label>
                                 <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">nacionalidad</label>
+                                <input type="text" class="form-control" name="nacionalidad" id="nacionalidad"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="" class="form-label">idCarreras</label>
                                 <input type="text" class="form-control" name="idCarreras" id="idCarreras"
                                     aria-describedby="helpId" placeholder="Tiempo del curso">
                                 <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" name="usuario" id="usuario"
+                                    aria-describedby="helpId" placeholder="Tiempo del curso">
+                                <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
+                            </div>
+
                             <div class="mb-3">
                                 <button type="reset" class="btn btn-danger">Limpiar</button>
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
@@ -198,11 +247,17 @@
                             <td>${valor.cedula}</td>
                             <td>${valor.correoelectronico}</td>
                             <td>${valor.telefono}</td>
+                            <td>${valor.telefonocelular}</td>
+                            <td>${valor.fechanacimiento}</td>
+                            <td>${valor.sexo}</td>
                             <td>${valor.direccion}</td>
                             <td>${valor.nombre}</td>
                             <td>${valor.apellidopaterno}</td>
                             <td>${valor.apellidomaterno}</td>
+                            <td>${valor.nacionalidad}</td>
                             <td>${valor.idCarreras}</td>
+                            <td>${valor.usuario}</td>
+
 
 
                             <td><button type="button" class="btn btn-danger" onclick="eliminar('${valor.id}')">Borrar</button>
@@ -219,19 +274,24 @@
         }
         const myModal = new bootstrap.Modal(document.getElementById('modalId'));
 
-        function actualizar(id, cedula, correoelectronico, telefono, direccion,
-            nombre, apellidopaterno, apellidomaterno, idCarreras) {
+        function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fechanacimiento,
+            direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idCarreras) {
             console.log(actualizar);
             myModal.show();
             document.getElementById("id").value = id;
             document.getElementById("cedula").value = cedula;
             document.getElementById("correoelectronico").value = correoelectronico;
             document.getElementById("telefono").value = telefono;
+            document.getElementById("telefonocelular").value = telefonocelular;
+            document.getElementById("fechanacimiento").value = fechanacimiento;
+            document.getElementById("sexo").value = sexo;
             document.getElementById("direccion").value = direccion;
             document.getElementById("nombre").value = nombre;
             document.getElementById("apellidopaterno").value = apellidopaterno;
             document.getElementById("apellidomaterno").value = apellidomaterno;
+            document.getElementById("nacionalidad").value=nacionalidad;
             document.getElementById("idCarreras").value = idCarreras;
+            document.getElementById("usuario").value = usuario;
 
         }
 
@@ -247,11 +307,16 @@
             let cedula = document.getElementById('cedula').value;
             let correoelectronico = document.getElementById('correoelectronico').value;
             let telefono = document.getElementById('telefono').value;
+            let telefonocelular = document.getElementById('telefonocelular').value;
+            let fechanacimiento = document.getElementById('fechanacimiento').value;
+            let sexo = document.getElementById('sexo').value;
             let direccion = document.getElementById('direccion').value;
             let nombre = document.getElementById('nombre').value;
             let apellidopaterno = document.getElementById('apellidopaterno').value;
             let apellidomaterno = document.getElementById('apellidomaterno').value;
+            let nacionalidad = document.getElementById('nacionalidad').value;
             let idCarreras = document.getElementById('idCarreras').value;
+            let usuario = document.getElementById('usuario').value;
 
             //Se guardan los datos recuperados en una variable
             var datosenviar = {
@@ -259,16 +324,16 @@
                 cedula: cedula,
                 correoelectronico: correoelectronico,
                 telefono: telefono,
-                telefonocelular: "00000",
-                fechanacimiento: "12-02-2002",
-                sexo: 'Masculino',
+                telefonocelular: telefonocelular,
+                fechanacimiento:fechanacimiento,
+                sexo: sexo,
                 direccion: direccion,
                 nombre: nombre,
                 apellidopaterno: apellidopaterno,
                 apellidomaterno: apellidomaterno,
-                nacionalidad: "Costa Rica",
+                nacionalidad: nacionalidad,
                 idCarreras: idCarreras,
-                usuario: "profesor Mario"
+                usuario: usuario
             };
 
             console.log(datosenviar);
